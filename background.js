@@ -62,6 +62,8 @@
         && !tab.discarded
         // only sleep if tab has aged past the timeout option
         && isOld
+        // only sleep if tab is muted
+        // && ((audible && !mutedInfo.muted) || !audible) // disabled, because reatining tab even for paused audio (podcast etc.) is useful
         // only sleep if the activeWindow option is false
         // or the tab is not in the active window
         && (!config.activeWindow.value || tab.windowId != activeWindowId)
